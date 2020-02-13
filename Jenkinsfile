@@ -1,7 +1,7 @@
 node("master") {
-    docker.withRegistry('rsharma_docker', 'rsharma12345/rsharma12345') {
+    docker.withRegistry('rsharma_docker', 'docker') {
     
-        git url: "https://github.com/rsharma-github/nolimits.git", credentialsId: 'rsharma-github/#Welcome123'
+        git url: "https://github.com/rsharma-github/nolimits.git", credentialsId: 'git'
     
         sh "git rev-parse HEAD > .git/commit-id"
         def commit_id = readFile('.git/commit-id').trim()
