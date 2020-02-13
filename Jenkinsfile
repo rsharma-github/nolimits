@@ -1,8 +1,4 @@
 node("master") {
- stages{
-    stage('checkout') {
-        git url: 'https://github.com/rsharma-github/nolimits.git'
-    }
     docker.withRegistry('docker.io/rsharma12345/rsharma_docker', 'docker') {
     
         git url: "https://github.com/rsharma-github/nolimits.git", credentialsId: 'git'
@@ -18,5 +14,4 @@ node("master") {
         app.push 'master'
         app.push "${commit_id}"
     }
- }
 }
