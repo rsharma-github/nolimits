@@ -1,5 +1,5 @@
 node("master") {
-    docker.withRegistry('https://hub.docker.com/repository/docker/rsharma12345/rsharma_docker', 'docker') {
+    docker.withRegistry('rsharma12345/rsharma_docker', 'docker') {
     
         git url: "https://github.com/rsharma-github/nolimits.git", credentialsId: 'git'
     
