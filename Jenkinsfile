@@ -8,7 +8,7 @@ node("master") {
         println commit_id
     
         stage "build"
-        def app = docker.build "Hackathon"
+        def app = docker.build "Hackathon:${env.BUILD_ID}"
     
         stage "publish"
         app.push 'master'
